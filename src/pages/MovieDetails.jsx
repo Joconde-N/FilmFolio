@@ -85,12 +85,12 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <div className="flex flex-col lg:flex-row gap-8 mb-12">
-        <div className="lg:w-80 flex-shrink-0">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mb-12">
+        <div className="w-full lg:w-80 flex-shrink-0">
           <img
             src={getImageUrl(movie.poster_path, 'w500')}
             alt={movie.title}
-            className="w-full rounded-lg shadow-lg"
+            className="w-full max-w-sm mx-auto lg:max-w-none rounded-lg shadow-lg"
             onError={(e) => {
               e.target.src = 'https://via.placeholder.com/500x750/374151/9CA3AF?text=No+Image'
             }}
@@ -98,7 +98,7 @@ const MovieDetails = () => {
         </div>
         
         <div className="flex-1">
-          <h1 className="text-4xl font-bold mb-4">{movie.title}</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold mb-4">{movie.title}</h1>
           
           <div className="flex flex-wrap items-center gap-6 mb-6 text-gray-300">
             <div className="flex items-center gap-1">
@@ -131,10 +131,10 @@ const MovieDetails = () => {
           
           <p className="text-gray-300 mb-8 leading-relaxed">{movie.overview}</p>
           
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={handleWatchlistToggle}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${
+              className={`flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${
                 isInWatchlist
                   ? 'bg-green-600 hover:bg-green-700'
                   : 'bg-blue-600 hover:bg-blue-700'
@@ -146,7 +146,7 @@ const MovieDetails = () => {
             
             <button
               onClick={() => setShowCollections(true)}
-              className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold transition-colors"
             >
               <FolderPlus className="h-5 w-5" />
               Add to Collection
@@ -155,7 +155,7 @@ const MovieDetails = () => {
             {trailerKey && (
               <button
                 onClick={() => setShowTrailer(true)}
-                className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg font-semibold transition-colors"
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg font-semibold transition-colors"
               >
                 <Play className="h-5 w-5" />
                 Watch Trailer

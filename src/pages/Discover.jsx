@@ -61,7 +61,7 @@ const Discover = () => {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Search Results</h2>
           {searchResults.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
               {searchResults.map(movie => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}
@@ -76,7 +76,7 @@ const Discover = () => {
         <div className="space-y-12">
           <section>
             <h2 className="text-2xl font-semibold mb-6">Trending This Week</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
               {trendingMovies.slice(0, 12).map(movie => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}
@@ -85,7 +85,7 @@ const Discover = () => {
 
           <section>
             <h2 className="text-2xl font-semibold mb-6">Popular Movies</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
               {popularMovies.slice(0, 12).map(movie => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}
